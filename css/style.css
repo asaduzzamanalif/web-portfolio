@@ -30,13 +30,43 @@ p {
 }
 
 .hire-button {
+    display: inline-block;
     text-decoration: none;
     background: linear-gradient(45deg,lightsalmon,tomato);
     color: #fff;
     padding: 10px 40px;
     font-weight: 700;
-    border-radius: 10px;
+    position: relative;
+    border-radius: 5px;
 }
+
+.hire-button::before,
+.hire-button::after{
+    content: "";
+    position: absolute;
+    background: blue;
+    transition: 1s;
+}
+
+.hire-button::before {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+}
+
+.hire-button::after {
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+}
+
+.hire-button:hover::before,
+.hire-button:hover::after {
+    width: 100%;
+}
+
        /* 
        ===================================================================
                           Global CSS Area End
@@ -65,6 +95,7 @@ p {
 
 .half-width img {
     width: 100%;
+    transition: 1s;
 }
      /* 
        ===================================================================
@@ -116,4 +147,8 @@ p {
 
 footer p {
     text-align: center;
+}
+
+img:hover {
+    transform: scale(1.1);
 }
